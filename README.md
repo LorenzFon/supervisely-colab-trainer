@@ -31,7 +31,7 @@ Includes **automated multi-format on-device model export** for **Apple CoreML** 
   - **Google LiteRT / TFLite (`.tflite`):** Google's on-device AI runtime for Android, Raspberry Pi, Coral Edge TPU, and microcontrollers.
   - **ONNX (`.onnx`):** Universal cross-platform runtime for Windows, Linux, TensorRT, OpenVINO, and Web.
 - **📦 On-Demand Package Installation:** Only installs packages required for your selected model family and export targets, keeping your environment clean and fast.
-- **📥 Deadlock-Free Batched Download:** Uses direct synchronous chunked fetching (`sly.Project.download(batch_size=50)`) that runs smoothly inside Jupyter's persistent event loop.
+- **⚡ Instant Background Prefetch & Persistent Image Cache:** Selecting a project automatically prefetches all images and annotations in a background daemon thread into `/content/sly_projects/project_<id>`. Before every training run, the studio verifies if the images are already cached on disk and reuses them immediately without re-downloading.
 - **🧠 Multi-Model Support (10 Families, 54 Checkpoints):**
   - **RT-DETRv2** (Hugging Face Transformers: ResNet-18, 34, 50, 101 | Apache 2.0)
   - **DEIMv2** (DINOv3 / Real-Time DETR: Atto, Femto, Pico, Nano, Small, Medium, Large, Extra-Large | Apache 2.0)
