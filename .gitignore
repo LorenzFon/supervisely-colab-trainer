@@ -1,0 +1,31 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# Training runs & datasets
+runs/
+sly_project/
+yolo_dataset/
+trained_model.zip
+*.pt
+*.pth
+*.safetensors
+*.onnx
+
+# Weights & Biases / Logging
+wandb/
+
+# Environments & secrets
+.env
+.env.*
+*.token
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
