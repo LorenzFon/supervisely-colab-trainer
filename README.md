@@ -12,7 +12,7 @@
   <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT">
 </p>
 
-An end-to-end, zero-restart interactive GUI studio for Google Colab that connects directly to your [Supervisely](https://supervisely.com) workspace. Select projects from an interactive dropdown, automatically convert annotations, and train state-of-the-art vision models (**RT-DETRv2**, **DEIMv2**, **MMDetection**, **YOLOX**, **YOLO11**, **YOLOv10**, **YOLOv9**, **YOLOv8**, **YOLOv5u**, and **YOLO-World v2**). 
+An end-to-end, zero-restart interactive GUI studio for Google Colab that connects directly to your [Supervisely](https://supervisely.com) workspace. Select projects from an interactive dropdown, automatically convert annotations, and train state-of-the-art vision models (**RT-DETRv2**, **DEIMv2**, **YOLOX**, **YOLO11**, **YOLOv10**, **YOLOv9**, **YOLOv8**, **YOLOv5u**, and **YOLO-World v2**). 
 
 Includes **automated multi-format on-device model export** for **Apple CoreML** (`.mlpackage`), **Google LiteRT / TFLite** (`.tflite`), and **ONNX** (`.onnx`) bundled directly into your download!
 
@@ -32,10 +32,9 @@ Includes **automated multi-format on-device model export** for **Apple CoreML** 
   - **ONNX (`.onnx`):** Universal cross-platform runtime for Windows, Linux, TensorRT, OpenVINO, and Web.
 - **📦 On-Demand Package Installation:** Only installs packages required for your selected model family and export targets, keeping your environment clean and fast.
 - **⚡ Instant Background Prefetch & Persistent Image Cache:** Selecting a project automatically prefetches all images and annotations in a background daemon thread into `/content/sly_projects/project_<id>`. Before every training run, the studio verifies if the images are already cached on disk and reuses them immediately without re-downloading.
-- **🧠 Multi-Model Support (10 Families, 54 Checkpoints):**
+- **🧠 Multi-Model Support (9 Families, 48 Checkpoints):**
   - **RT-DETRv2** (Hugging Face Transformers: ResNet-18, 34, 50, 101 | Apache 2.0)
   - **DEIMv2** (DINOv3 / Real-Time DETR: Atto, Femto, Pico, Nano, Small, Medium, Large, Extra-Large | Apache 2.0)
-  - **MMDetection** (OpenMMLab: RTMDet-Tiny/S/M/L/X, Faster R-CNN | Apache 2.0)
   - **YOLOX** (Megvii: Nano, Tiny, Small, Medium, Large, Extra-Large | Apache 2.0)
   - **YOLO11** (Ultralytics: Nano, Small, Medium, Large, Extra-Large)
   - **YOLOv10** (NMS-Free: Nano, Small, Medium, Balanced, Large, Extra-Large)
@@ -92,7 +91,6 @@ Click the **Play button (▶️)** on the form cell. Supervisely installs in the
 | :--- | :--- | :--- | :--- | :--- |
 | **RT-DETRv2** | Hugging Face Transformers | `Apache 2.0` *(Commercial Friendly)* | `rtdetr_v2_r18vd`<br>`rtdetr_v2_r34vd`<br>`rtdetr_v2_r50vd`<br>`rtdetr_v2_r101vd` | Real-time transformer; no NMS post-processing needed. Ideal for **PyTorch**, **ONNX**, and **CoreML**. |
 | **DEIMv2** | Intellindust AI Lab | `Apache 2.0` *(Commercial Friendly)* | `deimv2_atto`, `deimv2_femto`, `deimv2_pico`, `deimv2_n`<br>`deimv2_s`, `deimv2_m`, `deimv2_l`, `deimv2_x` | Real-Time DETR meets DINOv3. Combines DINOv3 foundation features with Dense O2O matching and HGNetv2 edge backbones. Native **ONNX**. |
-| **MMDetection** | OpenMMLab | `Apache 2.0` *(Commercial Friendly)* | `rtmdet_tiny`, `rtmdet_s`, `rtmdet_m`<br>`rtmdet_l`, `rtmdet_x`, `faster-rcnn_r50` | OpenMMLab's high-speed real-time detector (RTMDet) and two-stage classic (Faster R-CNN). **ONNX** for RTMDet (raw head outputs, decoding & NMS not included); Faster R-CNN requires [MMDeploy](https://github.com/open-mmlab/mmdeploy). |
 | **YOLOX** | Megvii | `Apache 2.0` *(Commercial Friendly)* | `yolox_nano.pth`, `yolox_tiny.pth`, `yolox_s.pth`<br>`yolox_m.pth`, `yolox_l.pth`, `yolox_x.pth` | High-performance anchor-free detector with decoupled head and SimOTA assignment. 100% permissive commercial license; native **ONNX**, **CoreML**, and **LiteRT**. |
 | **YOLO11** | Ultralytics | `AGPL-3.0` *(Commercial via Ultralytics)* | `yolo11n.pt`, `yolo11s.pt`, `yolo11m.pt`<br>`yolo11l.pt`, `yolo11x.pt` | Latest YOLO generation; ultra-fast inference and 100% native support for **Google LiteRT (.tflite)** & **CoreML**. |
 | **YOLOv10** | Ultralytics / Tsinghua | `AGPL-3.0` *(Ultralytics / Commercial)* | `yolov10n.pt`, `yolov10s.pt`, `yolov10m.pt`<br>`yolov10b.pt`, `yolov10l.pt`, `yolov10x.pt` | End-to-end NMS-free training. Dual label assignments eliminate post-processing overhead for lower edge latency. |
@@ -102,7 +100,7 @@ Click the **Play button (▶️)** on the form cell. Supervisely installs in the
 | **YOLO-World v2** | Ultralytics | `GPL-3.0 / AGPL-3.0` | `yolov8s-worldv2.pt`, `yolov8m-worldv2.pt`<br>`yolov8l-worldv2.pt`, `yolov8x-worldv2.pt` | Real-time Vision-Language open-vocabulary detector; excellent transfer learning on custom Supervisely classes. |
 
 ### 📜 Licensing Summary
-- **Apache 2.0 (RT-DETRv2, DEIMv2, MMDetection, YOLOX):** Permissive open-source licenses. You can freely use, modify, and distribute models in proprietary commercial applications without disclosing your source code or paying licensing royalties.
+- **Apache 2.0 (RT-DETRv2, DEIMv2, YOLOX):** Permissive open-source licenses. You can freely use, modify, and distribute models in proprietary commercial applications without disclosing your source code or paying licensing royalties.
 - **AGPL-3.0 / GPL-3.0 (YOLO11, YOLOv10, YOLOv9, YOLOv8, YOLOv5u, YOLO-World):** GNU Affero General Public License. Free for open-source and research projects. Closed-source enterprise commercial distribution requires a commercial license directly from [Ultralytics](https://ultralytics.com/license).
 
 ---
@@ -124,10 +122,10 @@ Click the **Play button (▶️)** on the form cell. Supervisely installs in the
          │ (Automatic Conversion & Train/Val Split)        │
          ▼                        ▼                        ▼
 ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐
-│RT-DETRv2 Pipeline│    │DEIMv2 / MMDetection   │Ultralytics Branch│
-│• SLYDataset      │    │  & YOLOX Pipelines    │• YOLO .txt labels│
+│RT-DETRv2 Pipeline│    │DEIMv2 & YOLOX    │    │Ultralytics Branch│
+│• SLYDataset      │    │  Pipelines       │    │• YOLO .txt labels│
 │• ImageProcessor  │    │• COCO JSON format│    │• dataset.yaml    │
-│• HuggingFace Tr. │    │• PyTorch / MMEngine   │• model.train()   │
+│• HuggingFace Tr. │    │• PyTorch training│    │• model.train()   │
 └────────┬─────────┘    └────────┬─────────┘    └────────┬─────────┘
          │                       │                       │
          └───────────────────────┼───────────────────────┘
